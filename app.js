@@ -6,57 +6,96 @@ const mole5 = document.getElementById("mole5")
 const mole6 = document.getElementById("mole6")
 const startBut = document.getElementById("startbut")
 const start = document.getElementById("start")
+const score = document.getElementById("score")
 
-function spawnMole(int) {
+function spawnMole() {
     let num = Math.ceil(Math.random() * 6)
-    if (int === num) {
-        spawnMole(int)
-    }
-    else if (num === 1) {
+    if (num === 1) {
         mole1.classList.add("mole-visible")
+        setTimeout(moleCheck, (1500 - ( parseInt(score.textContent) * 50 ))) 
     }
     else if (num === 2) {
         mole2.classList.add("mole-visible")
+        setTimeout(moleCheck, (1500 - ( parseInt(score.textContent) * 50 ))) 
     }
     else if (num === 3) {
         mole3.classList.add("mole-visible")
+        setTimeout(moleCheck, (1500 - ( parseInt(score.textContent) * 50 ))) 
     }
     else if (num === 4) {
         mole4.classList.add("mole-visible")
+        setTimeout(moleCheck, (1500 - ( parseInt(score.textContent) * 50 ))) 
     }
     else if (num === 5) {
         mole5.classList.add("mole-visible")
+        setTimeout(moleCheck, (1500 - ( parseInt(score.textContent) * 50 ))) 
     }
     else if (num === 6) {
         mole6.classList.add("mole-visible")
+        setTimeout(moleCheck, (1500 - ( parseInt(score.textContent) * 50 ))) 
     }
 }
 
+
+function moleCheck() {
+    if (mole1.classList[mole1.classList.length -1] === "mole-visible") {
+        clearInterval(startTheMoles)
+        alert(`Your final score is ${score.textContent}`)
+    }
+    else if (mole2.classList[mole1.classList.length -1] === "mole-visible") {
+        clearInterval(startTheMoles)
+        alert(`Your final score is ${score.textContent}`)
+    }
+    else if (mole3.classList[mole1.classList.length -1] === "mole-visible") {
+        clearInterval(startTheMoles)
+        alert(`Your final score is ${score.textContent}`)
+    }
+    else if (mole4.classList[mole1.classList.length -1] === "mole-visible") {
+        clearInterval(startTheMoles)
+        alert(`Your final score is ${score.textContent}`)
+    }
+    else if (mole5.classList[mole1.classList.length -1] === "mole-visible") {
+        clearInterval(startTheMoles)
+        alert(`Your final score is ${score.textContent}`)
+    }
+    else if (mole6.classList[mole1.classList.length -1] === "mole-visible") {
+        clearInterval(startTheMoles)
+        alert(`Your final score is ${score.textContent}`)
+    }
+    else {
+        return 
+    }
+}
+
+function startTheMoles() {
+    setInterval(spawnMole, (1500 - ( parseInt(score.textContent) * 50 )))
+}
+
 start.addEventListener("click", () => {
-    spawnMole(0)
+    startTheMoles()
 })
 
 mole1.addEventListener("click", () => {
     mole1.classList.toggle("mole-visible")
-    spawnMole(1)
+    score.textContent = parseInt(score.textContent) + 1
 })
 mole2.addEventListener("click", () => {
     mole2.classList.toggle("mole-visible")
-    spawnMole(2)
+    score.textContent = parseInt(score.textContent) + 1
 })
 mole3.addEventListener("click", () => {
     mole3.classList.toggle("mole-visible")
-    spawnMole(3)
+    score.textContent = parseInt(score.textContent) + 1
 })
 mole4.addEventListener("click", () => {
     mole4.classList.toggle("mole-visible")
-    spawnMole(4)
+    score.textContent = parseInt(score.textContent) + 1
 })
 mole5.addEventListener("click", () => {
     mole5.classList.toggle("mole-visible")
-    spawnMole(5)
+    score.textContent = parseInt(score.textContent) + 1
 })
 mole6.addEventListener("click", () => {
     mole6.classList.toggle("mole-visible")
-    spawnMole(6)
+    score.textContent = parseInt(score.textContent) + 1
 })
