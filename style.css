@@ -71,18 +71,19 @@ header p button {
 
 .hole {
     width: 200px;
+    border: 3px dashed red;
+    padding: 20px;
+    border-radius: 25px;
 }
 
 .moles {
     width: 200px;
-    display: none;
+    border-radius: 120px;
+    padding: 20px;
+    visibility: hidden;
     z-index: 9;
 }
 
 .mole-visible {
-    display: block;
-}
-
-#mole3 {
-    display: block;
+    visibility: visible;
 }
